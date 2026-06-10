@@ -1,0 +1,48 @@
+let  gastos = [
+    {
+      "id": "1",
+      "descripcion": "Coche",
+      "monto": "800000",
+      "categoria": "2",
+      "fecha": "2026-04-15"
+    },
+    {
+      "id": "2",
+      "descripcion": "Pizza",
+      "monto": "22000",
+      "categoria": "1",
+      "fecha": "2026-05-29"
+    },
+    {
+      "id": "3",
+      "descripcion": "Transplante de diente",
+      "monto": "1000",
+      "categoria": "4",
+      "fecha": "2026-06-05"
+    }
+  ],
+
+  categorias = [
+    {
+      "id": "1",
+      "nombre": "comida"
+    },
+    {
+      "id": "2",
+      "nombre": "transporte"
+    },
+    {
+      "id": "3",
+      "nombre": "ocio"
+    },
+    {
+      "id": "4",
+      "nombre": "salud"
+    },
+    {
+      "id": "5",
+      "nombre": "otro"
+    }
+  ]
+
+  module.exports = {gastos, categorias}
