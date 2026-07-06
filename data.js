@@ -22,7 +22,7 @@ let  gastos = [
     }
   ],
 
-  categorias = [
+categorias = [
     {
       "id": "1",
       "nombre": "comida"
