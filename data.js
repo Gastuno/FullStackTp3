@@ -45,4 +45,4 @@ categorias = [
     }
   ]
 
-  module.exports = {gastos, categorias}
+module.exports = { gastos, categorias }
