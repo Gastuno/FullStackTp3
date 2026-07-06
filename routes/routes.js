@@ -7,16 +7,19 @@ router.get('/api/gastos', (request, response) => {
 
   if (queryCategoria === "?categoria=comida") {
     const filtered = gastos.filter(gasto => gasto.categoria == categorias.find(categoria => categoria.descripcion === "comida"))
+    response.status(200).json(filtered)
   }
 
-  response.status(200).response.json(filtered)
+  else {
+    response.status(200).json(gastos)
+  }
 })
 
 router.get('/api/gastos/:id', (request, response) => {
   const id = request.params.id
   const gasto = gastos.find(gasto => gasto.id === id)
 
-  response.status(200).response.json(gasto)
+  response.status(200).json(gasto)
 })
 
 router.post('/api/gastos', (request, response) => {
@@ -55,11 +58,11 @@ router.delete('/api/gastos/:id', (request, response) => {
 })
 
 router.get('/api/categorias', (request, response) => {
-  response.status(200).response.json(categorias)
+  response.status(200).json(categorias)
 })
 
 router.get('/info', (request, response) => {
-  response.status(200).response.json({ tiempo: new Date(), cantidadGastos: gastos.length })
+  response.json({ tiempo: new Date(), cantidadGastos: gastos.length })
 })
 
 module.exports = router
