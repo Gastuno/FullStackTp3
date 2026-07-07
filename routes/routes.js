@@ -1,12 +1,13 @@
 const express = require('express')
-const {gastos, categorias} = require('../data')
 const router = express.Router()
+
+let {gastos, categorias} = require('../data')
 
 router.get('/api/gastos', (request, response) => {
   const queryCategoria = request.query.categoria;
 
-  if (queryCategoria === "?categoria=comida") {
-    const filtered = gastos.filter(gasto => gasto.categoria == categorias.find(categoria => categoria.descripcion === "comida"))
+  if (queryCategoria === "comida") {
+    const filtered = gastos.filter(gasto => gasto.categoria == categorias.find(categoria => categoria.nombre === "comida").id);
     response.status(200).json(filtered)
   }
 
